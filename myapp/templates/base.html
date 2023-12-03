@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <!-- Additional head elements, stylesheets, or scripts can be included here -->
+    {% load static %} <!-- Add this line to load the static template tag -->
+    <link rel="stylesheet" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <!-- Your header content goes here -->
+        <h1>Welcome to My Site</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'signup' %}">Signup</a></li>
+                <li><a href="{% url 'custom_login' %}">Login</a></li>
+                <!-- Add other navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <!-- Your footer content goes here -->
+        <p>&copy; 2023 My Site. All rights reserved.</p>
+    </footer>
+
+    <!-- Additional scripts or other elements can be included here -->
+
+</body>
+</html>
